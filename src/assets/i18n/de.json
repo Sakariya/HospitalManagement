@@ -1,0 +1,22 @@
+{
+	"demo": {
+		"aboutus": "Sobre nosotros",
+		"contactus": "Contáctenos",
+		"data": "Datos",
+		"language": "Idioma",
+		"login": "Iniciar sesión",
+		"logout": "Cerrar sesión",
+		"register": "Registro",
+		"services": "Servicios"
+	},
+	"login": {
+		"Job": "Trabajo",
+		"JobRequired": "El trabajo del usuario es obligatorio",
+		"LogInSuccessFulMsg": "Inicio de sesión correcto",
+		"LoginBtn": "Iniciar sesión",
+		"Name": "nombre",
+		"UserNameRequired": "Se requiere nombre de usuario",
+		"forgetpassword": "Olvidaste tu contraseña?",
+		"login": "Iniciar sesión"
+	}
+}

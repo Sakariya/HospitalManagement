@@ -1,0 +1,78 @@
+<app-header></app-header>
+<div>
+  <br/>
+  <p>
+    sign-up works! {{ krishna }} </p>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }" bdColor = "rgba(51, 51, 51, 0.8)" color="#fff" type="ball-clip-rotate"></ngx-loading>
+  <button (click)="myFunc()"> my function </button>
+  <br/>
+</div>
+
+<div class="wrapper">
+  <form class="" name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm">
+    <h1 class="title"> Registration</h1>
+    <hr/>
+    <app-file-upload maxFiles="4" maxSize="2" (fileSelected)="uploadeImage($event)" fileExt="JPG, GIF, PNG"></app-file-upload>
+    <div [ngClass]="{'has-error': f.submitted && !userName.valid }">
+      <input type="text" placeholder="User Name" name="userName" [(ngModel)]="model.userName" #userName="ngModel" required/>
+      <!-- Text Field -->
+      <i class="fa fa-user"></i>
+      <div *ngIf="f.submitted && !userName.valid">User name is required</div>
+      <hr/>
+    </div>
+
+    <div>
+      <input type="checkbox" value="tnc" name="TnC" [(ngModel)]="model.TnC" #TnC="ngModel" required/>T&C
+      <br>
+      <!-- checkbox -->
+      <div *ngIf="f.submitted && !TnC.valid">T & C required</div>
+      <hr/>
+    </div>
+
+    <!-- Drop down -->
+    <div>
+      <select name="cars" [(ngModel)]="model.cars" #cars="ngModel" required>
+        <option value="" disabled selected>Select your option</option>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+      <div *ngIf="f.submitted && !cars.valid"> Required </div>
+      <hr/>
+    </div>
+
+    <!-- Radio button -->
+    <p> Gender </p>
+    <input type="radio" name="Gender" [(ngModel)]="model.Gender" #Gender="ngModel" value="male" checked="checked" /> Male
+    <br>
+    <input type="radio" name="Gender" [(ngModel)]="model.Gender" #Gender="ngModel" value="female" /> Female
+    <br>
+    <input type="radio" name="Gender" [(ngModel)]="model.Gender" #Gender="ngModel" value="other" /> Other
+    <br>
+    <br>
+    <hr/>
+
+
+    <!-- Date picker -->
+    <div class="ui-g-12 ui-md-4">
+      <p>Date of Birth</p>
+      <p-calendar (onSelect)="calculateAge(model.date)" [showIcon]="true" [monthNavigator]="true" [yearNavigator]="true" yearRange="1970:2030"
+        name="date" [(ngModel)]="model.date" #date="ngModel"></p-calendar> 
+    </div>
+    <div *ngIf="f.submitted && !date.valid">Date required</div>
+    <br>
+    <hr/>
+    <!-- age calculated from DOB -->
+    <input type="text" placeholder="age" disabled value="{{model.age}}" />
+    <br>
+    <hr/>
+    <button>
+      Submit
+    </button>
+
+    <button type="reset">
+      Clear
+    </button>
+  </form>
+</div>

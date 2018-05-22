@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="wrapper">
+
+
+  <div id="dogru" *ngIf="successMsg">
+    <i class="fa fa-smile-o b" style="color:#4abf7d"></i> {{'login.LogInSuccessFulMsg' | translate }}
+    <i class="fa fa-check p"></i>
+  </div>
+
+
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  <form class="login" name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+    <p class="title">{{'login.login' | translate}}</p>
+
+    <div [ngClass]="{'has-error': f.submitted && !userName.valid }">
+      <input type="text" name="userName" [(ngModel)]="model.userName" #userName="ngModel" placeholder="{{'login.Name' | translate }}" autofocus required/>
+      <i class="fa fa-user"></i>
+      <div *ngIf="f.submitted && !userName.valid">{{'login.UserNameRequired' | translate }}</div>
+    </div>
+
+    <div [ngClass]="{'has-error': f.submitted && !userJob.valid }">
+      <input type="text" placeholder="{{'login.Job' | translate }}" name="userJob" #userJob="ngModel" [(ngModel)]="model.userJob" required/>
+      <i class="fa fa-briefcase"></i>
+      <div *ngIf="f.submitted && !userJob.valid">{{'login.JobRequired' | translate }}</div>
+    </div>
+
+    <a>{{ 'login.forgetpassword' | translate }}</a>
+
+    <button [disabled]="!f.form.valid">
+      <!-- disable the submit button while form is not valid  -->
+      <span class="state">{{'login.LoginBtn' | translate }}</span>
+    </button>
+
+
+  </form>
+</div>

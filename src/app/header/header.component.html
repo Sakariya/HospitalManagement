@@ -1,0 +1,38 @@
+<div section="navigationbar">
+  <nav class="fixed-nav-bar">
+    <!-- Fixed navigation bar content -->
+    <ul class="navigation">
+      <li *ngIf="!token.exists()">
+        <a routerLink='/login'>{{ 'demo.login' | translate }}</a>
+      </li>
+      <li *ngIf="!token.exists()">
+        <a routerLink='/signup'>{{ 'demo.register' | translate }}</a>
+      </li>
+      <li *ngIf="token.exists()">
+        <a routerLink='/data'>{{ 'demo.data' | translate }}</a>
+      </li>
+      <li>
+        <a>{{ 'demo.aboutus' | translate }}</a>
+      </li>
+      <li>
+        <a>{{ 'demo.contactus' | translate }}</a>
+      </li>
+      <li>
+        <a>{{ 'demo.services' | translate }}</a>
+      </li>
+      <li *ngIf="token.exists()">
+        <a (click)="logoutFunction()"> {{ 'demo.logout' | translate }}</a>
+      </li>
+      <li class="languageDiv">
+        <div class="dropdown" style="float:right;">
+          <button class="dropbtn">{{'demo.language' | translate }}</button>
+          <div class="dropdown-content">
+            <a (click)="useLanguage('en')" >en</a>
+            <a (click)="useLanguage('de')" >de</a>
+          </div>
+        </div>
+      </li>
+    </ul>    
+  </nav>
+ 
+</div>

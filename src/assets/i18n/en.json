@@ -1,0 +1,22 @@
+{
+	"demo": {
+		"aboutus": "AboutUs",
+		"contactus": "ContactUs",
+		"data": "Data ",
+		"language": "language",
+		"login": "Login",
+		"logout": "Logout",
+		"register": "Register",
+		"services": "services"
+	},
+	"login": {
+		"Job": "Job",
+		"JobRequired": "User Job is required",
+		"LogInSuccessFulMsg": "Login successful",
+		"LoginBtn": "Log in",
+		"Name": "Name",
+		"UserNameRequired": "User name is required",
+		"forgetpassword": "Forgot your password?",
+		"login": "Log in"
+	}
+}

@@ -1,0 +1,19 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+<app-header></app-header>
+<div>
+  <br/>
+  <p>
+    data-single-user works!
+  </p>
+  Showing details for User: {{myData.id}}
+
+
+  <div>
+    {{myData.id}}
+    {{myData.first_name}}
+    {{myData.last_name}}
+    <img src="{{myData.avatar}}" />
+
+  </div>
+
+</div>

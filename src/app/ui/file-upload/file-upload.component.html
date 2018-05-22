@@ -1,0 +1,24 @@
+<div *ngIf="!isFileselected" draggable="true" class="ion-ios-person size-96 mx-auto" ngClass="{{dragAreaClass}}">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <input type="file" #fileInput [multiple]="(maxFiles == 1)" (change)="showFilelected($event)" style="display:none" />
+        </div>
+    </div>
+</div>
+<div class="row error" *ngIf="errors.length > 0">
+    <ul>
+        <li *ngFor="let err of errors">{{err}}</li>
+    </ul>
+</div>
+<div *ngIf="isFileselected">
+    <img class="imageWidth" src="{{base64Image}}" />
+</div>
+<div *ngIf="!isFileselected">
+        <span class="mt-2">Drop image here or   <span class="green" ><a  (click)="browseFile()"> Browse</a></span></span> 
+    
+</div>
+<div *ngIf="isFileselected">
+    <a (click)="removeSelected()">
+        <i class="ion-close"></i>
+    </a>
+</div>
